@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { PortfolioData } from '../data/portfolio';
+import portfolio from '../data/portfolio';
 
 interface ContactProps {
-  data: PortfolioData;
+  data: typeof portfolio;
 }
 
 const Contact = ({ data }: ContactProps) => {
