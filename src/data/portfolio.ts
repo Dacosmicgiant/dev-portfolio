@@ -1,11 +1,11 @@
 // Portfolio data types
-export interface SocialLink {
+interface SocialLink {
   name: string;
   url: string;
   icon: string;
 }
 
-export interface Project {
+interface Project {
   title: string;
   description: string;
   technologies: string[];
@@ -14,7 +14,7 @@ export interface Project {
   imageUrl?: string;
 }
 
-export interface Experience {
+interface Experience {
   company: string;
   position: string;
   duration: string;
@@ -22,12 +22,12 @@ export interface Experience {
   technologies: string[];
 }
 
-export interface Skill {
+interface Skill {
   category: string;
   items: string[];
 }
 
-export interface PortfolioData {
+interface PortfolioData {
   personal: {
     name: string;
     title: string;
@@ -49,7 +49,7 @@ export interface PortfolioData {
 }
 
 // Portfolio data
-export const portfolioData: PortfolioData = {
+const portfolioData: PortfolioData = {
   personal: {
     name: "Vedant Vankar",
     title: "Full Stack Developer",
@@ -151,3 +151,7 @@ export const portfolioData: PortfolioData = {
     }
   ]
 };
+
+// Explicit exports
+export type { PortfolioData, SocialLink, Project, Experience, Skill };
+export { portfolioData };
