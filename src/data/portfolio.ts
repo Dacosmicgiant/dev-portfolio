@@ -1,3 +1,4 @@
+// Portfolio data types
 export interface SocialLink {
   name: string;
   url: string;
@@ -47,6 +48,7 @@ export interface PortfolioData {
   socials: SocialLink[];
 }
 
+// Portfolio data
 export const portfolioData: PortfolioData = {
   personal: {
     name: "Vedant Vankar",
