@@ -1,55 +1,6 @@
-// Portfolio data types
-interface SocialLink {
-  name: string;
-  url: string;
-  icon: string;
-}
-
-interface Project {
-  title: string;
-  description: string;
-  technologies: string[];
-  githubUrl?: string;
-  liveUrl?: string;
-  imageUrl?: string;
-}
-
-interface Experience {
-  company: string;
-  position: string;
-  duration: string;
-  description: string;
-  technologies: string[];
-}
-
-interface Skill {
-  category: string;
-  items: string[];
-}
-
-interface PortfolioData {
-  personal: {
-    name: string;
-    title: string;
-    bio: string;
-    location: string;
-    email: string;
-    resumeUrl: string;
-    avatar?: string;
-  };
-  hero: {
-    greeting: string;
-    tagline: string;
-    description: string;
-  };
-  skills: Skill[];
-  projects: Project[];
-  experience: Experience[];
-  socials: SocialLink[];
-}
-
-// Portfolio data
-const portfolioData: PortfolioData = {
+// Portfolio data as a single exportable object
+const portfolio = {
+  // Personal information
   personal: {
     name: "Vedant Vankar",
     title: "Full Stack Developer",
@@ -59,18 +10,22 @@ const portfolioData: PortfolioData = {
     resumeUrl: "/resume.pdf",
     avatar: "/avatar.jpg"
   },
+
+  // Hero section content
   hero: {
     greeting: "Hello, World!",
     tagline: "I craft digital stories through code",
     description: "Like a manga artist brings characters to life, I transform ideas into interactive experiences using modern web technologies."
   },
+
+  // Skills organized by category
   skills: [
     {
       category: "Frontend",
       items: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "Angular"]
     },
     {
-      category: "Backend", 
+      category: "Backend",
       items: ["Node.js", "Express", "Python", "Django", "PostgreSQL", "MongoDB"]
     },
     {
@@ -82,6 +37,8 @@ const portfolioData: PortfolioData = {
       items: ["VS Code", "Figma", "Postman", "Jest", "Webpack", "Vite"]
     }
   ],
+
+  // Featured projects
   projects: [
     {
       title: "E-commerce Platform",
@@ -105,6 +62,8 @@ const portfolioData: PortfolioData = {
       liveUrl: "https://ai-chat-demo.com"
     }
   ],
+
+  // Work experience
   experience: [
     {
       company: "TechCorp Inc.",
@@ -116,7 +75,7 @@ const portfolioData: PortfolioData = {
     {
       company: "StartupXYZ",
       position: "Frontend Developer",
-      duration: "2020 - 2022", 
+      duration: "2020 - 2022",
       description: "Built responsive web applications from design mockups. Improved application performance by 40% through optimization.",
       technologies: ["Vue.js", "TypeScript", "Webpack", "SASS", "REST APIs"]
     },
@@ -128,6 +87,8 @@ const portfolioData: PortfolioData = {
       technologies: ["HTML", "CSS", "JavaScript", "PHP", "MySQL"]
     }
   ],
+
+  // Social media links
   socials: [
     {
       name: "GitHub",
@@ -135,7 +96,7 @@ const portfolioData: PortfolioData = {
       icon: "github"
     },
     {
-      name: "LinkedIn", 
+      name: "LinkedIn",
       url: "https://linkedin.com/in/vedant-vankar",
       icon: "linkedin"
     },
@@ -149,9 +110,36 @@ const portfolioData: PortfolioData = {
       url: "mailto:vedant@example.com",
       icon: "email"
     }
-  ]
-};
+  ],
 
-// Explicit exports
-export type { PortfolioData, SocialLink, Project, Experience, Skill };
-export { portfolioData };
+  // Type definitions for TypeScript support
+  types: {
+    SocialLink: {} as {
+      name: string;
+      url: string;
+      icon: string;
+    },
+    Project: {} as {
+      title: string;
+      description: string;
+      technologies: string[];
+      githubUrl?: string;
+      liveUrl?: string;
+      imageUrl?: string;
+    },
+    Experience: {} as {
+      company: string;
+      position: string;
+      duration: string;
+      description: string;
+      technologies: string[];
+    },
+    Skill: {} as {
+      category: string;
+      items: string[];
+    }
+  }
+} as const;
+
+// Export the complete portfolio object
+export default portfolio;
