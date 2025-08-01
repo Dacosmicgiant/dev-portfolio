@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { PortfolioData } from '../data/portfolio';
+import portfolio from '../data/portfolio';
 
 interface HeroProps {
-  data: PortfolioData;
+  data: typeof portfolio;
 }
 
 const Hero = ({ data }: HeroProps) => {

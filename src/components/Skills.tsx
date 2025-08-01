@@ -1,7 +1,7 @@
-import { Skill } from '../data/portfolio';
+import portfolio from '../data/portfolio';
 
 interface SkillsProps {
-  data: Skill[];
+  data: typeof portfolio.skills;
 }
 
 const Skills = ({ data }: SkillsProps) => {
