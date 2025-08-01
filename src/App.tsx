@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { portfolioData } from './data/portfolio';
+import portfolio from './data/portfolio';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -62,11 +62,11 @@ function App() {
       
       {/* Main content */}
       <main>
-        <Hero data={portfolioData} />
-        <Skills data={portfolioData.skills} />
-        <Projects data={portfolioData.projects} />
-        <Experience data={portfolioData.experience} />
-        <Contact data={portfolioData} />
+        <Hero data={portfolio} />
+        <Skills data={portfolio.skills} />
+        <Projects data={portfolio.projects} />
+        <Experience data={portfolio.experience} />
+        <Contact data={portfolio} />
       </main>
 
       {/* Manga-style decorative elements */}
