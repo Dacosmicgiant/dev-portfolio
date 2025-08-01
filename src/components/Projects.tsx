@@ -1,8 +1,8 @@
 import { useState } from 'react';
-import { Project } from '../data/portfolio';
+import portfolio from '../data/portfolio';
 
 interface ProjectsProps {
-  data: Project[];
+  data: typeof portfolio.projects;
 }
 
 const Projects = ({ data }: ProjectsProps) => {
