@@ -1,0 +1,21 @@
+RESUME SETUP INSTRUCTIONS
+=======================
+
+To set up your resume download:
+
+1. Add your resume PDF file to this public directory
+2. Name it 'resume.pdf' 
+3. Or update the resumeUrl path in src/data/portfolio.ts to match your file name
+
+The current configuration expects the file to be at:
+/resume.pdf
+
+This will make it accessible at:
+https://yourdomain.com/resume.pdf
+
+Make sure your resume file is optimized and includes:
+- Contact information
+- Professional experience  
+- Skills and technologies
+- Education
+- Projects (optional, since they're showcased on the site)
