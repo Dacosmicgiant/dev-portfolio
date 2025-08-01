@@ -1,7 +1,7 @@
-import { Experience } from '../data/portfolio';
+import portfolio from '../data/portfolio';
 
 interface ExperienceProps {
-  data: Experience[];
+  data: typeof portfolio.experience;
 }
 
 const ExperienceComponent = ({ data }: ExperienceProps) => {
