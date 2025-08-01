@@ -1,69 +1,110 @@
-# React + TypeScript + Vite
+# Manga-Inspired Portfolio Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A static, minimal yet visually appealing portfolio website designed with manga aesthetics using only black and white colors. Built with React, TypeScript, and Tailwind CSS.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 🎨 **Manga-inspired design** with speech bubbles, panels, and comic-style elements
+- ⚫ **Monochrome aesthetic** using only black and white colors
+- 🌊 **Smooth animations** and transitions throughout
+- 📱 **Fully responsive** design for all devices
+- ♿ **Accessibility features** including reduced motion support
+- 📝 **Single data file configuration** for easy customization
+- 🚀 **Fast and lightweight** built with modern web technologies
 
-## Expanding the ESLint configuration
+## Sections
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **Hero** - Introduction with typewriter effect and character panel
+- **Skills** - Technical abilities organized by category with manga-style presentation
+- **Projects** - Showcased work with expandable details and action buttons
+- **Experience** - Professional timeline with manga panel layout
+- **Contact** - Contact form, social links, and resume download
 
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## Customization
 
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
+All content is managed through a single data file located at `src/data/portfolio.ts`. Simply update the `portfolioData` object to customize:
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
+- Personal information
+- Skills and technologies
+- Project details and links
+- Work experience
+- Social media links
+- Contact information
+
+### Example customization:
+
+```typescript
+export const portfolioData: PortfolioData = {
+  personal: {
+    name: "Your Name",
+    title: "Your Title",
+    bio: "Your bio...",
+    location: "Your Location",
+    email: "your.email@example.com",
+    resumeUrl: "/path-to-your-resume.pdf"
   },
-])
+  // ... rest of the configuration
+};
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Development
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+### Prerequisites
 
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- Node.js (v16 or higher)
+- npm or yarn
+
+### Getting Started
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+
+4. Open [http://localhost:5173](http://localhost:5173) in your browser
+
+### Build for Production
+
+```bash
+npm run build
 ```
+
+The built files will be in the `dist` directory, ready for deployment.
+
+## Technology Stack
+
+- **React 19** - UI library
+- **TypeScript** - Type safety
+- **Tailwind CSS 4** - Styling framework
+- **Vite** - Build tool and dev server
+
+## Design Philosophy
+
+This portfolio embraces the visual language of manga:
+
+- **Bold typography** with strong contrast
+- **Panel-based layouts** mimicking comic book panels
+- **Speech bubbles** for callouts and highlights  
+- **Speed lines and effects** for dynamic elements
+- **Monochrome palette** staying true to traditional manga aesthetics
+- **Sharp edges and borders** creating that authentic comic book feel
+
+## Browser Support
+
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+- Accessibility features for screen readers
+
+## Contributing
+
+This is a personal portfolio template, but feel free to fork and adapt it for your own use!
+
+## License
+
+MIT License - feel free to use this template for your own portfolio.
