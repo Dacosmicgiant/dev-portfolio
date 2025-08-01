@@ -231,6 +231,128 @@ body {
   transform: translateY(0);
 }
 
+/* Additional manga-inspired animations */
+@keyframes comicZoom {
+  0% {
+    transform: scale(0.5) rotate(-5deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.1) rotate(2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes shakingText {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-2px); }
+  75% { transform: translateX(2px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.4);
+  }
+}
+
+@keyframes slideInFromLeft {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes floatingElement {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Manga panel variants */
+.manga-panel-zoom {
+  animation: comicZoom 0.6s ease-out forwards;
+}
+
+.manga-panel-glow:hover {
+  animation: pulseGlow 0.5s ease-in-out;
+}
+
+.manga-text-shake:hover {
+  animation: shakingText 0.5s ease-in-out infinite;
+}
+
+.floating {
+  animation: floatingElement 3s ease-in-out infinite;
+}
+
+/* Focus ring for accessibility */
+.manga-button:focus,
+.manga-panel:focus {
+  outline: 3px solid #000;
+  outline-offset: 3px;
+}
+
+/* Custom selection */
+::selection {
+  background-color: #000;
+  color: #fff;
+}
+
+/* Responsive text scaling */
+@media (max-width: 768px) {
+  .manga-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .manga-panel {
+    border-width: 4px;
+    box-shadow: 6px 6px 0px #000;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .speed-lines::before {
+    display: none;
+  }
+}
+
 /* Button styles */
 .manga-button {
   background: #000;
